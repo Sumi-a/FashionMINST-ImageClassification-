@@ -1,0 +1,3 @@
+[submodule "fashion-styling-frontend"]
+	path = fashion-styling-frontend
+	url = https://github.com/Sumi-a/fashion-styling-frontend.git
