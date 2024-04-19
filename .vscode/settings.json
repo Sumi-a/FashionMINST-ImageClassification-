@@ -1,3 +1,12 @@
 {
-  "python.defaultInterpreterPath": "/myenv/bin/python"
+  "python.analysis.extraPaths": [
+    "/Users/sumeyyasherief/my-fashion-styling-project/venv/lib/python3.12/site-packages"
+  ],
+  "python.autoComplete.extraPaths": [
+    "/Users/sumeyyasherief/my-fashion-styling-project/venv/lib/python3.12/site-packages"
+  ],
+  "python.analysis.indexing": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none"
+  }
 }
