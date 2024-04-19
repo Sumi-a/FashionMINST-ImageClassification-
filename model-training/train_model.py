@@ -95,67 +95,6 @@ model.save('fashion_mnist_model.h5')
 model = load_model('fashion_mnist_model.h5')
 print("Model loaded successfully!")
 
-
-# # Optionally, predict
-# predictions = model.predict(test_images)
-
-# def load_and_prepare_image(filepath):
-#     # Load the image file, targeting a size of 28x28 pixels
-#     img = image.load_img(filepath, color_mode="grayscale", target_size=(28, 28))
-#     # Convert the image to a numpy array
-#     img_array = image.img_to_array(img)
-#     # Scale the image data
-#     img_array /= 255.0
-#     # Reshape data for the model
-#     # img_array = img_array.reshape((1, 28, 28, 1))
-#     img_array = np.expand_dims(img_array, axis=0)
-#     return img_array
-
-# def classify_image(model, img_path):
-#     # Load and prepare the image
-#     prepared_img = load_and_prepare_image(img_path)
-#     # Make a prediction
-#     prediction = model.predict(prepared_img)
-#     # Convert prediction probabilities to class index
-#     class_index = np.argmax(prediction, axis=1)
-#     # Define class labels 
-#     labels_description = {
-#         0: "T-shirt/top", 1: "Trouser", 2: "Pullover", 3: "Dress", 4: "Coat",
-#         5: "Sandal", 6: "Shirt", 7: "Sneaker", 8: "Bag", 9: "Ankle Boot"
-#     }
-#     # Return the class label
-#     return labels_description[class_index[0]] , prepared_img
-
-# # Example usage:
-# image_path = '/Users/sumeyyasherief/Desktop/image.jpeg'
-# original_image = Image.open(image_path)
-# # Convert to grayscale, resize, add padding to keep aspect ratio, and invert colors
-# processed_image = ImageOps.grayscale(original_image)
-# processed_image = processed_image.resize((28, 28))
-# processed_image = ImageOps.invert(processed_image)
-
-# # Convert to numpy array and normalize
-# image_array = np.array(processed_image) / 255.0
-# image_array = image_array.reshape((1, 28, 28, 1))  # Reshape for the model
-
-# # Convert the class index into the corresponding label
-# labels_description = {
-#     0: "T-shirt/top", 1: "Trouser", 2: "Pullover", 3: "Dress", 4: "Coat",
-#     5: "Sandal", 6: "Shirt", 7: "Sneaker", 8: "Bag", 9: "Ankle Boot"
-# }
-# predicted_class, img_array = classify_image(model, image_path)
-# # print("Predicted class:", labels_description[predicted_class[0]])
-
-
-# # print("Predicted class:", classify_image(model, image_path))
-# # predicted_class, img_array = classify_image(model, image_path)
-# print("Predicted class:", predicted_class)
-
-# # Predict and print the class
-# prediction = model.predict(img_array)
-# predicted_class = np.argmax(prediction, axis=1)
-# print("Predicted class index:", predicted_class)
-
 def classify_image(model, prepared_img):
     # Make a prediction
     prediction = model.predict(prepared_img)
